@@ -1,0 +1,74 @@
+@startuml
+
+package domain {
+
+    class User <<Entity>> {
+        -- Attributes --
+        String firstName
+        String lastName
+        String mail
+        String password
+        Date lastLogin
+        List<Project> projects
+        --
+    }
+
+    class Project <<Entity>> {
+        -- Attributes --
+        String name
+        List<Task> tasks
+        List<Label> labels
+        --
+    }
+
+    class Task <<Entity>> {
+        -- Attributes --
+        String value
+        Date expire
+        List<Label> labels
+        List<Note> notes
+        List<Task> subTasks
+        --
+    }
+
+    class Label <<Value Object>> {
+        -- Attribute --
+        String value
+        --
+    }
+
+    class Note <<Entity>> {
+        -- Attribute --
+        String content
+        --
+    }
+
+    package event {
+        class CreateProject <<event>>
+        class CreatedProject
+
+        class CreateTask
+        class CreatedTask
+
+        class CreateLabel
+        class CreatedLabel
+        class ReadLabel
+        class DeleteLabel
+        class DeletedLabel
+        class UpdateLabel
+        class UpdatedLabel
+    }
+}
+
+enum Factory
+interface ProjectService
+interface TaskService
+interface NoteService
+
+User o-- Project
+Project o-- Task
+Project o-- Label
+Task o-- Task
+Task o-- Label
+Task o-- Note
+@enduml
