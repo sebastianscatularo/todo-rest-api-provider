@@ -1,0 +1,16 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo tasks dashboard",
+  "main": "index.js",
+  "dependencies": {
+    "aglio": "^1.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "aglio": "aglio -i api-doc.md --server"
+  },
+  "author": "",
+  "license": "ISC"
+}

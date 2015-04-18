@@ -1,0 +1,30 @@
+@startuml@
+class User {
+    String email
+    String password
+}
+
+class Dashboard {
+    String name
+}
+
+class Task {
+    String name
+    Date due
+}
+
+class Label {
+    String name
+}
+
+class Note {
+    String content
+}
+
+User  o-- Dashboard
+Dashboard o-- Label
+Dashboard o-- Task
+Task o-- Label
+Task o-- Note
+
+@enduml@
