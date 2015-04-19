@@ -27,7 +27,7 @@ An dashboard with trasks to do.
             }
         ]
 
-# Dashboards [/dashboards]
+# Dashboards [/users/{id}/dashboards]
 
 ## All allowed dashboards [GET]
 
@@ -50,3 +50,13 @@ An dashboard with trasks to do.
                                 
             }
         ]
+
+#Data Structures
+## User (object)
++email: 80 (string)
+
+    User email
+
++lastLogin: (date)
+
+    Last login date
